@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "figma": {
+      "command": "npx",
+      "args": ["-y", "figma-developer-mcp", "--stdio"],
+      "env": { "FIGMA_API_KEY": "${FIGMA_API_TOKEN}" }
+    },
+    "supabase": {
+      "command": "npx",
+      "args": [
+        "-y", "dotenv-cli", "-e", ".env", "--",
+        "sh", "-c", "SUPABASE_ACCESS_TOKEN=$SUPABASE_MCP_TOKEN npx -y @supabase/mcp-server-supabase"
+      ]
+    }
+  }
+}
