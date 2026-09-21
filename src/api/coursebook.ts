@@ -1,8 +1,8 @@
-import { supabase } from "@/lib/supabase";
+import { getSupabase } from "@/lib/supabase";
 import type { Coursebook } from "@/types/coursebook";
 
 export async function getCoursebooks() {
-  const { data, error } = await supabase
+  const { data, error } = await getSupabase()
     .from("coursebooks")
     .select("id, type, title, price, discount_rate, sale_price, image_url")
     .order("id");
